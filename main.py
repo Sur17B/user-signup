@@ -34,18 +34,24 @@ class Index(webapp2.RequestHandler):
 
         form = """
         <form action="/welcome" method="post">
-            <label>Username</label>
-                <input type="text" name="username" value="{uname}" required/> <font style="color:red" pattern="">{uerror}</font>
-            <br>
-            <label>Password</label>
-                <input type="password" name="password1" required/>
-            <br>
-            <label>Verify Password</label>
-                <input type="password" name="password2" required/> <font style="color:red" pattern="">{perror}</font>
-            <br>
-            <label>Email (optional)</label>
-                <input type="email" name="useremail" value="{uemail}"/> <font style="color:red" pattern="">{eerror}</font>
-            <br>
+            <table>
+            <tr>
+            <td><label>Username</label></td>
+                <td><input type="text" name="username" value="{uname}" required/> <font style="color:red" pattern="">{uerror}</font></td>
+            </tr>
+            <tr>
+            <td><label>Password</label></td>
+                <td><input type="password" name="password1" required/></td>
+            </tr>
+            <tr>
+            <td><label>Verify Password</label></td>
+                <td><input type="password" name="password2" required/> <font style="color:red" pattern="">{perror}</font></td>
+            </tr>
+            <tr>
+            <td><label>Email (optional)</label></td>
+                <td><input type="email" name="useremail" value="{uemail}"/> <font style="color:red" pattern="">{eerror}</font></td>
+            </tr>
+            </table>
             <input type="submit" value="Submit"/>
         </form>
         """.format(uname=username, uerror=usernameerror, perror=passworderror, uemail=useremail, eerror=emailerror)
